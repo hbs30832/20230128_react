@@ -148,3 +148,69 @@ console.log(obj.weight?.num.age.name);
 console.log("안녕하세요 " + user.name + "입니다.");
 
 console.log(`안녕하세요 ${user.age}세 ${user.name}입니다.`);
+
+/* 
+    배열의 고차함수
+        - 배열을 순회하면서 각 요소에 대한 함수를 실행한다.
+        - 배열의 요소의 개수만큼 반복하는 함수.
+*/
+let numbers = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+// forEach : 배열의 각 요소를 인자로 전달받는 콜백함수를 실행.
+//      => 콜백함수의 첫번째 매개변수에 각 요소가 전달.
+//      => 콜백함수의 두번째 매개변수에 각 요소의 인덱스 전달
+numbers.forEach((num, idx) => console.log(num, "idx : ", idx));
+
+/* 
+    Array.prototype.filter() : 콜백함수의 return true인 요소만 모아서 새로운 배열로 반환.
+        => return 값이 true, false여야한다. => 조건식이면 된다.
+*/
+let evenNumbers = numbers.filter(function (num) {
+  return num % 2 === 0;
+});
+console.log(evenNumbers);
+
+// 홀수만 모아서 반환 => 화살표 함수 이용하기.
+let oddNumbers = numbers.filter((num) => num % 2 !== 0);
+console.log(oddNumbers);
+
+/* 
+    Array.prototype.map() : 각 요소를 이용해서 새로운 값을 만들어내어 새로운 배열로 반환.
+*/
+let doubleNumbers = numbers.map(function (num) {
+  return num * 2;
+});
+console.log(doubleNumbers);
+// 화살표 함수로 짝수번째만 두배 곱하고, 나머지는 그대로 새로운 배열로 모으기 => [1, 4, 3, 8, 5]
+/* 
+    let resultArr = numbers.map((num, idx) => {
+        if(idx % 2 !== 0) return num * 2;
+        
+        return num;
+    };
+*/
+// 인덱스 나눈 나머지가 0이 아니면 num * 2를 반환, 그게 아니면 num 반환
+let resultArr = numbers.map((num, idx) => (idx % 2 !== 0 ? num * 2 : num));
+
+console.log(resultArr);
+
+// age 30이상인 객체의 이름 값만 배열로 모으기
+let userList = [
+  { name: "seok", age: 31 },
+  { name: "mincheol", age: 20 },
+  { name: "cheolsu", age: 40 },
+];
+
+// 메서드 체이닝 : 메서드의 반환값에 따라 메서드를 이어서 실행한다.
+let nameList = userList
+  .filter((user) => user.age >= 30)
+  .map((user) => user.name);
+// let nameList = filterList.map((user) => user.name);
+
+console.log(nameList);
+
+// console.log(["seok", "cheolsu"]);
