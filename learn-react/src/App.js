@@ -1,15 +1,10 @@
 import "./App.css";
-import Hello from "./component/Hello";
+import Counter from "./component/Counter";
 
 function App() {
   return (
     <>
-      <Hello title="Seok" color="red" />
-      <Hello backgroundColor="yellow" />
-      <Hello />
-      <Hello>
-        <p>자식요소입니다.</p>
-      </Hello>
+      <Counter />
     </>
   );
 }
