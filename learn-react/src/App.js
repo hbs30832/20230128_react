@@ -1,10 +1,12 @@
 import "./App.css";
-import Counter from "./component/Counter";
+import Inputs from "./component/Inputs";
+import TodoList from "./component/TodoList";
 
 function App() {
   return (
     <>
-      <Counter />
+      <TodoList />
+      <Inputs />
     </>
   );
 }
