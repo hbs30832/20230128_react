@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import React, { useContext, useMemo } from "react";
+import { CountContext } from "../../App";
 
 function countUndoneTodo(todos) {
   console.log("안한 일 세는 중...");
@@ -11,6 +12,8 @@ function TodoList({ todos, onRemove, onToggle }) {
     return countUndoneTodo(todos);
   }, [todos]);
 
+  console.log("rendering...");
+
   return (
     <div>
       해야할일 : {undoneCount}
@@ -21,6 +24,7 @@ function TodoList({ todos, onRemove, onToggle }) {
             todo={todo}
             onRemove={onRemove}
             onToggle={onToggle}
+            undoneCount={undoneCount}
           />
         ))}
       </ul>
@@ -29,6 +33,9 @@ function TodoList({ todos, onRemove, onToggle }) {
 }
 
 function TodoItem({ todo, onRemove, onToggle }) {
+  const count = useContext(CountContext);
+
+  console.log(count);
   return (
     <li>
       <span
@@ -42,4 +49,5 @@ function TodoItem({ todo, onRemove, onToggle }) {
   );
 }
 
-export default TodoList;
+// React.memo : 컴포넌트가 받는 props가 변경되었을 때만 덴더링이 다시 일어난다.
+export default React.memo(TodoList);

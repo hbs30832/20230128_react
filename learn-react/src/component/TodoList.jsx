@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 const todoList = [
   { id: 1, text: "컴포넌트 만들기", done: true },
@@ -33,11 +33,11 @@ function TodoList() {
     inputRef.current.focus();
   };
 
-  const handleRemove = (id) => {
+  const handleRemove = useCallback((id) => {
     if (window.confirm("삭제하시겠습니까?"))
       // 선택한 id가 아닌 요소들만 모으기(filter) => filter도 새로운 배열 반환.
-      setTodos(todos.filter((todo) => todo.id !== id));
-  };
+      setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  }, []);
 
   const handleToggle = (id) => {
     setTodos(
