@@ -1,8 +1,8 @@
-function TodoCreate() {
+function TodoCreate({ onSubmit, onChange }) {
   return (
     <div>
-      <form>
-        <input type="text" />
+      <form onSubmit={onSubmit}>
+        <input type="text" onChange={onChange} />
         <button>등록</button>
       </form>
     </div>
