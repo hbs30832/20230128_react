@@ -15,7 +15,7 @@ const slideUp = keyframes`
   }
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
   width: 100px;
   padding: 5px 0;
   border-radius: 15px;
@@ -23,6 +23,8 @@ const StyledButton = styled.div`
   background-color: ${({ bgColor, theme }) => bgColor || theme.colors.main};
   color: #fff;
   text-align: center;
+  outline: none;
+  border: none;
 
   cursor: pointer;
   user-select: none;

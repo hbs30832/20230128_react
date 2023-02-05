@@ -4,6 +4,7 @@ import TodoHeader from "./component/TodoHeader";
 import TodoList from "./component/TodoList";
 import TodoCreate from "./component/TodoCreate";
 import styled, { createGlobalStyle } from "styled-components";
+import Flex from "./component/Flex";
 
 const GlobalStyle = createGlobalStyle`
   * {
