@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useTodoDispatch } from "../../context/todos";
 
-function TodoCreate({ onSubmit }) {
+function TodoCreate() {
   const [text, setText] = useState("");
+  const dispatch = useTodoDispatch();
+  const nextId = useRef(4);
+  console.log("render..");
 
   const handleText = (e) => setText(() => e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(text);
+    dispatch({ type: "create", id: nextId.current++, text });
   };
-
-  console.log("rendering create");
 
   return (
     <div>
