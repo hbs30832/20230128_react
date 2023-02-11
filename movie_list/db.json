@@ -26,5 +26,50 @@
       "id": 1,
       "name": "seok"
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "제목입니다.",
+      "body": "대충 글 내용입니다.",
+      "author": "hbs9312"
+    },
+    {
+      "id": 2,
+      "title": "리액트 어려워요",
+      "body": "대충 리액트가 어렵다는 내용의 글 내용입니다.",
+      "author": "hbs9312"
+    },
+    {
+      "id": 3,
+      "title": "집에 가고 싶다...",
+      "body": "집에 가고 싶어서 글을 작성해보았습니다.",
+      "author": "hbs9312"
+    },
+    {
+      "title": "글 제목입니다.",
+      "body": "글이 잘 등록 될까요?",
+      "id": 4
+    },
+    {
+      "title": "제목ㅇ비니다.",
+      "body": "ajkldsjasldsa",
+      "id": 5
+    },
+    {
+      "title": "ASDADSAD",
+      "body": "ASDASDASDASD",
+      "id": 6
+    },
+    {
+      "title": "asdsad",
+      "body": "asdad",
+      "id": 7
+    },
+    {
+      "title": "asdsad",
+      "body": "sadsa",
+      "id": 8
+    }
   ]
 }
