@@ -1,7 +1,12 @@
-import Todos from "./component/practice/Todos";
+import { Route, Routes } from "react-router-dom";
+import Home from "./component/practice/router/Home";
 
 function App() {
-  return <Todos />;
+  return (
+    <Routes>
+      <Route path="home" element={<Home />} />
+    </Routes>
+  );
 }
 
 export default App;

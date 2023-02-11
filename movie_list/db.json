@@ -1,6 +1,30 @@
 {
-  "posts": [
-    { "id": 1, "text": "Todos 컴포넌트 만들기", "done": true },
-    { "id": 2, "text": "json-server로 api 연동 연습", "done": false }
+  "todos": [
+    {
+      "id": 2,
+      "text": "json-server로 api 연동 연습",
+      "done": true
+    },
+    {
+      "text": "asdadaddsadads",
+      "done": false,
+      "id": 10
+    },
+    {
+      "text": "dsadsadsadadfasdsadsa",
+      "done": false,
+      "id": 13
+    },
+    {
+      "text": "dsadsadsadadfasdsadasdasa",
+      "done": true,
+      "id": 14
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "seok"
+    }
   ]
 }
