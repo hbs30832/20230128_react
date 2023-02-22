@@ -4,7 +4,6 @@ import TodoHeader from "./component/TodoHeader";
 import TodoList from "./component/TodoList";
 import TodoCreate from "./component/TodoCreate";
 import styled, { createGlobalStyle } from "styled-components";
-import Flex from "./component/Flex";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -25,16 +24,29 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <Container>
-      <GlobalStyle />
-      <TodoHeader />
-      <TodoList />
-      <TodoCreate />
-    </Container>
+    <Positioner>
+      <Container>
+        <GlobalStyle />
+        <TodoHeader />
+        <TodoList />
+        <TodoCreate />
+      </Container>
+    </Positioner>
   );
 }
 
+const Positioner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+`;
+
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 700px;
   border: 2px solid;
   border-color: ${({ theme }) => theme.colors.border};
 `;

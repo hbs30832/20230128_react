@@ -1,13 +1,18 @@
+import styled from "styled-components";
 import TodoItem from "./TodoItem";
 
 function TodoList() {
   return (
-    <ul>
+    <Container>
       <TodoItem />
       <TodoItem />
       <TodoItem />
-    </ul>
+    </Container>
   );
 }
+
+const Container = styled.ul`
+  flex: 1;
+`;
 
 export default TodoList;
