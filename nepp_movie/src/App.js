@@ -5,6 +5,8 @@ import TV from "./components/pages/TV";
 import People from "./components/pages/People";
 import styled from "styled-components";
 import Home from "./components/pages/Home";
+import MovieList from "./components/movie/MovieList";
+import MovieDetail from "./components/movie/MovieDetail";
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
       <MainSection>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie" element={<Movie />} />
+          <Route path="/movie" element={<Movie />}>
+            <Route path="" element={<MovieList />} />
+            <Route path=":id" element={<MovieDetail />} />
+          </Route>
           <Route path="/tv" element={<TV />} />
           <Route path="/people" element={<People />} />
         </Routes>

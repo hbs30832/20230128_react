@@ -1,17 +1,24 @@
 // src/components/home/ContentItem.jsx
 
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function ContentItem({ item }) {
-  const poster_url = "https://image.tmdb.org/t/p/w200" + item.poster_path;
+  const { id, title, release_date, poster_path, name, first_air_date } = item;
+
+  const poster_url = "https://image.tmdb.org/t/p/w200" + poster_path;
+
+  const type = title ? "movie" : "tv";
 
   return (
     <Container>
-      <ImageBox>
-        <img src={poster_url} alt="" />
-      </ImageBox>
-      <Title>{item.title}</Title>
-      <ReleaseDate>{item.release_date}</ReleaseDate>
+      <Link to={`/${type}/${id}`}>
+        <ImageBox>
+          <img src={poster_url} alt="" />
+        </ImageBox>
+        <Title>{title || name}</Title>
+        <ReleaseDate>{release_date || first_air_date}</ReleaseDate>
+      </Link>
     </Container>
   );
 }
