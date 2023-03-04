@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Home from "./components/pages/Home";
 import MovieList from "./components/movie/MovieList";
 import MovieDetail from "./components/movie/MovieDetail";
+import { useEffect } from "react";
 
 function App() {
   return (

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainSection from "./components/common/MainSection";
 import Auth from "./components/pages/Auth";

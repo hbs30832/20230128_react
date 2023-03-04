@@ -1,8 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Header from "./Header";
 
 function MainSection() {
+  const token = localStorage.getItem("token");
+
+  if (!token) return <Navigate to="/auth/login" />;
+
   return (
     <Container>
       <Header />
@@ -21,6 +25,7 @@ const Container = styled.div`
 `;
 
 const OutletWrapper = styled.div`
+  display: flex;
   max-width: 900px;
   margin: 0 auto;
   background-color: #fff;
