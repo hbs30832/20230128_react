@@ -1,9 +1,21 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { getCurrentUser } from "../../api/auth";
+import { fetchUser } from "../../redux/user";
 import Header from "./Header";
 
 function MainSection() {
   const token = localStorage.getItem("token");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getCurrentUser().then((data) => {
+      console.log(data);
+      dispatch(fetchUser(data));
+    });
+  }, [dispatch]);
 
   if (!token) return <Navigate to="/auth/login" />;
 

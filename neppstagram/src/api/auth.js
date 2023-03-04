@@ -39,6 +39,6 @@ export const login = async (form) => {
 export const getCurrentUser = async () => {
   try {
     const { data } = await authAxios.get("/current");
-    console.log(data);
+    return data;
   } catch (e) {}
 };

@@ -1,15 +1,17 @@
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { getCurrentUser } from "../../api/auth";
 
 function Profile() {
-  useEffect(() => {
-    getCurrentUser().then((res) => console.log(res));
-  }, []);
+  const { user, isLoading } = useSelector((state) => state.user);
+
+  console.log(user);
+
+  if (isLoading) return <div>로딩 중...</div>;
+
   return (
     <Container>
       <ImgBox></ImgBox>
-      <UserName>test_user</UserName>
+      <UserName>{user.name}</UserName>
     </Container>
   );
 }
