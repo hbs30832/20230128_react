@@ -42,3 +42,18 @@ export const getCurrentUser = async () => {
     return data;
   } catch (e) {}
 };
+
+export const patchProfile = async (file) => {
+  try {
+    // 파일을 서버에 보내기 위해서 FormData를 이용.
+    const form = new FormData();
+    // FormData.prototype.append("키", "값");
+    form.append("profile", file);
+
+    const { data } = await authAxios.patch("/profile", form);
+
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
